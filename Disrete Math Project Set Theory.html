@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discrete Math Set Theory Quiz</title>
+  <link rel="stylesheet" href="Disrete Math Project Set Theory.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-badge">Set Theory</div>
+      <h1>Discrete Math Quiz</h1>
+      <p class="subtitle">A browser-based quiz for Set Theory practice.</p>
+    </header>
+
+    <nav class="top-toolbar">
+      <button id="openGuideButton" class="action-button guide-button hidden">Open Guide</button>
+    </nav>
+
+    <section class="guide-panel hidden" id="guidePanel" aria-hidden="true">
+      <div class="guide-panel-inner">
+        <button id="closeGuideButton" class="action-button close-guide">Close Guide</button>
+        <h2>Set Theory Reviewer Guide</h2>
+        <div class="guide-content">
+          <div id="guideBasics">
+          <section>
+            <h3>Q1-Q2: Roster Method &amp; Set Builder Notation</h3>
+            <p><strong>Concept:</strong> Elements must strictly satisfy all conditions, such as parity and inequality boundaries.</p>
+            <p><strong>Example:</strong> Let A = {x | x is a positive odd integer less than 10}.</p>
+            <p><strong>Elements of A:</strong> {1, 3, 5, 7, 9}. Note that 10 is not included because it is even, and negative numbers are excluded because it specifies positive.</p>
+            <p><strong>Method:</strong> Read the condition carefully. Check boundaries (less than vs less than or equal). Verify each element satisfies ALL conditions.</p>
+          </section>
+
+          <section>
+            <h3>Q3: Disjoint Sets</h3>
+            <p><strong>Concept:</strong> Two sets are disjoint if they have NO elements in common. In other words, their intersection is empty.</p>
+            <p><strong>Formula:</strong> Sets A and B are disjoint if A ∩ B = ∅</p>
+            <p><strong>Example:</strong> Is {1, 3, 5} disjoint from {2, 4, 6}? Yes, because they share no common elements.</p>
+            <p><strong>Method:</strong> Look for ANY element that appears in both sets. If you find even one common element, the sets are NOT disjoint.</p>
+            <p><strong>Tip:</strong> Think of disjoint as "completely separate with nothing in common."</p>
+          </section>
+
+          <section>
+            <h3>Q4: Intersection (A ∩ B)</h3>
+            <p><strong>Concept:</strong> The set containing only the elements that belong to both sets at the same time.</p>
+            <p><strong>Formula:</strong> A ∩ B = {elements in BOTH A and B}</p>
+            <p><strong>Example:</strong> If S = {2, 4, 6, 8} and T = {4, 8, 12, 16}, find S ∩ T.</p>
+            <p><strong>Method:</strong> Look for the overlapping numbers. Both sets contain 4 and 8.</p>
+            <p><strong>Result:</strong> {4, 8}</p>
+          </section>
+
+          <section>
+            <h3>Q5: Union (A ∪ B)</h3>
+            <p><strong>Concept:</strong> Combining all elements from both sets into a single set. Duplicate items are only written once.</p>
+            <p><strong>Formula:</strong> A ∪ B = {all elements in A or B or both}</p>
+            <p><strong>Example:</strong> If J = {a, b, c} and K = {c, d, e}, find J ∪ K.</p>
+            <p><strong>Method:</strong> List everything together without repeating c.</p>
+            <p><strong>Result:</strong> {a, b, c, d, e}</p>
+          </section>
+
+          <section>
+            <h3>Q6: Cardinality &amp; Empty Sets</h3>
+            <p><strong>Concept:</strong> Cardinality, denoted |S|, is the total number of unique elements inside a set. An empty set {} has a cardinality of 0.</p>
+            <p><strong>Formula:</strong> |S| = number of unique elements in S</p>
+            <p><strong>Example:</strong> What is the cardinality of V = {x | x is a month that starts with the letter 'Z'}?</p>
+            <p><strong>Solution:</strong> No months start with Z, so the set is empty.</p>
+            <p><strong>Result:</strong> |V| = 0</p>
+          </section>
+
+          <section>
+            <h3>Q7 &amp; Q10: Set Equality</h3>
+            <p><strong>Concept:</strong> Two sets are completely equal if they contain the exact same unique elements. Order and duplicates do not change the identity of the set.</p>
+            <p><strong>Formula:</strong> A = B if both sets contain exactly the same elements</p>
+            <p><strong>Example 1:</strong> Does {1, 2, 3} equal {3, 2, 1, 1}? YES. Reordering and repeating 1 does not introduce new unique elements.</p>
+            <p><strong>Example 2:</strong> Does {x, y} equal {x, y, x, y}? YES. Multiple listings of identical objects make no difference to the set.</p>
+            <p><strong>Tip:</strong> Sets ignore order AND duplicates. Only unique elements matter.</p>
+          </section>
+
+          <section>
+            <h3>Q8: Set Difference (A - B)</h3>
+            <p><strong>Concept:</strong> A - B means taking Set A and removing any elements from it that also appear in Set B.</p>
+            <p><strong>Formula:</strong> A - B = {elements in A but NOT in B}</p>
+            <p><strong>Example:</strong> If G = {10, 20, 30, 40} and H = {30, 40, 50, 60}, evaluate G - H.</p>
+            <p><strong>Method:</strong> Start with G and remove 30 and 40 because they are in H. Do not add 50 or 60 because we only keep what is left in G.</p>
+            <p><strong>Result:</strong> {10, 20}</p>
+          </section>
+
+          <section>
+            <h3>Q9: Power Set</h3>
+            <p><strong>Concept:</strong> The power set is the set of all possible subsets. The total number of elements in a power set is 2 raised to the power of n, where n is the cardinality of the original set.</p>
+            <p><strong>Formula:</strong> |P(S)| = 2^n, where n = |S|</p>
+            <p><strong>Example:</strong> Find the total number of subsets for W = {x, y, z}.</p>
+            <p><strong>Solution:</strong> n = 3. 2^3 = 8.</p>
+            <p><strong>Result:</strong> There are 8 subsets in the power set.</p>
+          </section>
+
+          <section>
+            <h3>Q11 &amp; Q12: Universal Set &amp; Complements</h3>
+            <p><strong>Concept:</strong> The complement of set A (denoted A' or A^c) consists of all elements in the universal set U that are not in A.</p>
+            <p><strong>Formula:</strong> A' = U - A (everything in U except A)</p>
+            <p><strong>Example:</strong> Let U = {1,2,3,4,5,6,7,8,9,10} and B = {2,4,6,8,10}. Find B'.</p>
+            <p><strong>Solution:</strong> Remove all elements of B from U. The remaining numbers form the complement.</p>
+            <p><strong>Result:</strong> B' = {1, 3, 5, 7, 9}</p>
+            <p><strong>Tip:</strong> Always remember: Complements are defined within a Universal Set. An element k is in A' if and only if k is in U but NOT in A.</p>
+          </section>
+
+          <section>
+            <h3>Q13: Tuples &amp; Ordered Pairs</h3>
+            <p><strong>Concept:</strong> In tuples and ordered pairs, the ORDER of components matters. This is different from sets where order doesn't matter.</p>
+            <p><strong>Example:</strong> Is the 3-tuple (1, 2, 3) the same as (3, 2, 1)? NO. Tuples are ordered.</p>
+            <p><strong>Method:</strong> For tuples: position matters. (a, b) ≠ (b, a) unless a = b.</p>
+            <p><strong>Tip:</strong> Remember: Sets ignore order. Tuples care about order. Sets ignore duplicates. Tuples can have duplicates.</p>
+          </section>
+
+          <section>
+            <h3>Q14: Cartesian Product</h3>
+            <p><strong>Concept:</strong> Creating ordered pairs from two sets. The total number of coordinate pairs is found by multiplying the cardinalities of both sets: |X × Y|.</p>
+            <p><strong>Formula:</strong> |X × Y| = |X| × |Y|</p>
+            <p><strong>Example:</strong> If X has 5 elements and Y has 4 elements, what is |X × Y|?</p>
+            <p><strong>Solution:</strong> Multiply the sizes together: 5 × 4 = 20.</p>
+            <p><strong>Result:</strong> 20 coordinate items.</p>
+          </section>
+
+          <section>
+            <h3>Q15: Principle of Inclusion-Exclusion (PIE)</h3>
+            <p><strong>Concept:</strong> To find the total elements in the union of two sets, add the individual sizes of both sets, then subtract the size of their intersection to avoid double-counting.</p>
+            <p><strong>Formula:</strong> |A ∪ B| = |A| + |B| - |A ∩ B|</p>
+            <p><strong>Example:</strong> If |A| = 20, |B| = 25, and |A ∩ B| = 7, find |A ∪ B|.</p>
+            <p><strong>Solution:</strong> 20 + 25 - 7 = 38.</p>
+            <p><strong>Result:</strong> 38</p>
+            <p><strong>Tip:</strong> We subtract |A ∩ B| because elements in the intersection were counted twice (once in |A| and once in |B|).</p>
+          </section>
+          </div>
+
+          <div id="guideDiagrams" class="hidden">
+            <div id="guideDiagram1" class="hidden">
+              <section>
+                <h3>Diagram Guide for Questions 16–25: Solving with Venn Diagrams</h3>
+                <p>Use the first Venn diagram for this section. Learn how to identify and combine elements from different regions in the order they appear in the quiz.</p>
+                
+                <h4>📍 Understanding the Diagram Structure</h4>
+                <p><strong>Left circle (A only):</strong> Elements only in Set A, not in B</p>
+                <p><strong>Overlap (A ∩ B):</strong> Elements in both A and B</p>
+                <p><strong>Right circle (B only):</strong> Elements only in Set B, not in A</p>
+                <p><strong>Outside (Universe - A - B):</strong> Elements in the Universal Set U but in neither A nor B</p>
+                
+                <h4>🔍 How to Find Each Type (In Quiz Order):</h4>
+                
+                <h5>Q16: Universal Set (U)</h5>
+                <p><strong>Formula:</strong> U = Left Circle + Overlap + Right Circle + Outside</p>
+                <p><strong>Method:</strong> Collect ALL elements from every region of the diagram.</p>
+                <p><strong>Tip:</strong> The universal set includes everything shown.</p>
+                
+                <h5>Q17: Union (A ∪ B)</h5>
+                <p><strong>Formula:</strong> A ∪ B = Elements in A + Elements in B (without repeating overlaps)</p>
+                <p><strong>Method:</strong> Take elements from Left Circle + Overlap + Right Circle (do NOT include elements outside).</p>
+                <p><strong>Tip:</strong> Union combines ALL elements from both sets. Include the overlap once, not twice.</p>
+                
+                <h5>Q18: Identify Set A</h5>
+                <p><strong>Formula:</strong> A = Left Circle + Overlap</p>
+                <p><strong>Method:</strong> Look at everything in the left circle including both the part alone and the overlapping part.</p>
+                <p><strong>Tip:</strong> Set A contains all elements in the left circle region, whether shared with B or not.</p>
+                
+                <h5>Q19: Identify Set B</h5>
+                <p><strong>Formula:</strong> B = Right Circle + Overlap</p>
+                <p><strong>Method:</strong> Look at everything in the right circle including both the part alone and the overlapping part.</p>
+                <p><strong>Tip:</strong> Set B contains all elements in the right circle region, whether shared with A or not.</p>
+                
+                <h5>Q20: Intersection (A ∩ B)</h5>
+                <p><strong>Formula:</strong> A ∩ B = Elements in BOTH sets</p>
+                <p><strong>Method:</strong> Look ONLY at the Overlap region. These are the elements in both A and B.</p>
+                <p><strong>Tip:</strong> Intersection is like "AND" - elements must be in BOTH circles.</p>
+                
+                <h5>Q21: Complement of Union (A ∪ B)'</h5>
+                <p><strong>Formula:</strong> (A ∪ B)' = U - (A ∪ B)</p>
+                <p><strong>Method:</strong> Take ONLY the elements in the Outside region (exclude all circles).</p>
+                <p><strong>Tip:</strong> The complement of union is everything NOT in either A or B, which is the outside area.</p>
+                
+                <h5>Q22: Set Difference (A - B)</h5>
+                <p><strong>Formula:</strong> A - B = Elements in A but NOT in B</p>
+                <p><strong>Method:</strong> Take ONLY the Left Circle (elements in A alone, not in the overlap).</p>
+                <p><strong>Tip:</strong> Difference means "remove B from A" - keep only what's unique to A.</p>
+                
+                <h5>Q23: Set Difference (B - A)</h5>
+                <p><strong>Formula:</strong> B - A = Elements in B but NOT in A</p>
+                <p><strong>Method:</strong> Take ONLY the Right Circle (elements in B alone, not in the overlap).</p>
+                <p><strong>Tip:</strong> Difference means "remove A from B" - keep only what's unique to B.</p>
+                
+                <h5>Q24: Complement of A (A')</h5>
+                <p><strong>Formula:</strong> A' = U - A (everything in U except A)</p>
+                <p><strong>Method:</strong> Take elements from Right Circle + Outside (exclude everything in the left circle and overlap).</p>
+                <p><strong>Tip:</strong> Complement includes what's NOT in A but IS in the Universal Set.</p>
+                
+                <h5>Q25: Complement of B (B')</h5>
+                <p><strong>Formula:</strong> B' = U - B (everything in U except B)</p>
+                <p><strong>Method:</strong> Take elements from Left Circle + Outside (exclude everything in the right circle and overlap).</p>
+                <p><strong>Tip:</strong> Complement includes what's NOT in B but IS in the Universal Set.</p>
+              </section>
+            </div>
+
+            <div id="guideDiagram2" class="hidden">
+              <section>
+                <h3>Diagram Guide for Questions 26–35: Solving with Venn Diagrams</h3>
+                <p>Use the second Venn diagram for this section. Apply the same methods you learned in the correct order they appear in the quiz.</p>
+                
+                <h4>📍 Understanding the Diagram Structure</h4>
+                <p><strong>Left circle (A only):</strong> Elements only in Set A, not in B</p>
+                <p><strong>Overlap (A ∩ B):</strong> Elements in both A and B</p>
+                <p><strong>Right circle (B only):</strong> Elements only in Set B, not in A</p>
+                <p><strong>Outside (Universe - A - B):</strong> Elements in the Universal Set U but in neither A nor B</p>
+                
+                <h4>🔍 How to Find Each Type (In Quiz Order):</h4>
+                
+                <h5>Q26: Universal Set (U)</h5>
+                <p><strong>Formula:</strong> U = Left Circle + Overlap + Right Circle + Outside</p>
+                <p><strong>Method:</strong> Collect ALL elements from every region of the diagram.</p>
+                <p><strong>Tip:</strong> The universal set includes everything shown.</p>
+                
+                <h5>Q27: Union (A ∪ B)</h5>
+                <p><strong>Formula:</strong> A ∪ B = Elements in A + Elements in B (without repeating overlaps)</p>
+                <p><strong>Method:</strong> Take elements from Left Circle + Overlap + Right Circle (do NOT include elements outside).</p>
+                <p><strong>Tip:</strong> Union combines ALL elements from both sets. Include the overlap once, not twice.</p>
+                
+                <h5>Q28: Identify Set A</h5>
+                <p><strong>Formula:</strong> A = Left Circle + Overlap</p>
+                <p><strong>Method:</strong> Look at everything in the left circle including both the part alone and the overlapping part.</p>
+                <p><strong>Tip:</strong> Set A contains all elements in the left circle region, whether shared with B or not.</p>
+                
+                <h5>Q29: Identify Set B</h5>
+                <p><strong>Formula:</strong> B = Right Circle + Overlap</p>
+                <p><strong>Method:</strong> Look at everything in the right circle including both the part alone and the overlapping part.</p>
+                <p><strong>Tip:</strong> Set B contains all elements in the right circle region, whether shared with A or not.</p>
+                
+                <h5>Q30: Intersection (A ∩ B)</h5>
+                <p><strong>Formula:</strong> A ∩ B = Elements in BOTH sets</p>
+                <p><strong>Method:</strong> Look ONLY at the Overlap region. These are the elements in both A and B.</p>
+                <p><strong>Tip:</strong> Intersection is like "AND" - elements must be in BOTH circles.</p>
+                
+                <h5>Q31: Complement of Union (A ∪ B)'</h5>
+                <p><strong>Formula:</strong> (A ∪ B)' = U - (A ∪ B)</p>
+                <p><strong>Method:</strong> Take ONLY the elements in the Outside region (exclude all circles).</p>
+                <p><strong>Tip:</strong> The complement of union is everything NOT in either A or B, which is the outside area.</p>
+                
+                <h5>Q32: Set Difference (A - B)</h5>
+                <p><strong>Formula:</strong> A - B = Elements in A but NOT in B</p>
+                <p><strong>Method:</strong> Take ONLY the Left Circle (elements in A alone, not in the overlap).</p>
+                <p><strong>Tip:</strong> Difference means "remove B from A" - keep only what's unique to A.</p>
+                
+                <h5>Q33: Set Difference (B - A)</h5>
+                <p><strong>Formula:</strong> B - A = Elements in B but NOT in A</p>
+                <p><strong>Method:</strong> Take ONLY the Right Circle (elements in B alone, not in the overlap).</p>
+                <p><strong>Tip:</strong> Difference means "remove A from B" - keep only what's unique to B.</p>
+                
+                <h5>Q34: Complement of A (A')</h5>
+                <p><strong>Formula:</strong> A' = U - A (everything in U except A)</p>
+                <p><strong>Method:</strong> Take elements from Right Circle + Outside (exclude everything in the left circle and overlap).</p>
+                <p><strong>Tip:</strong> Complement includes what's NOT in A but IS in the Universal Set.</p>
+                
+                <h5>Q35: Complement of B (B')</h5>
+                <p><strong>Formula:</strong> B' = U - B (everything in U except B)</p>
+                <p><strong>Method:</strong> Take elements from Left Circle + Outside (exclude everything in the right circle and overlap).</p>
+                <p><strong>Tip:</strong> Complement includes what's NOT in B but IS in the Universal Set.</p>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main class="quiz-card welcome-card" id="welcomePanel">
+      <h2>Welcome To A Discrete Math Quiz!</h2>
+      <p class="welcome-copy">Topic: Set Theory</p>
+      <p class="welcome-copy">Made By: Isaiah Borja</p>
+      <button id="startButton" class="action-button">Start Quiz</button>
+    </main>
+
+    <main class="quiz-card hidden" id="quizCard">
+      <section class="quiz-meta">
+        <div><strong>Topic:</strong> Set Theory</div>
+        <div><strong>Questions:</strong> 35</div>
+      </section>
+
+      <section class="diagram-panel hidden" id="diagramPanel" aria-hidden="true">
+        <div class="diagram-box">
+          <div class="diagram-title" id="diagramTitle"></div>
+          <div class="diagram-viewport">
+            <div class="venn-diagram" id="diagram1">
+              <div class="circle circle-left">
+                <div class="circle-label">A</div>
+                <div class="circle-items">3, 5, 7, 11</div>
+              </div>
+              <div class="circle circle-right">
+                <div class="circle-label">B</div>
+                <div class="circle-items">4, 6, 8, 10, 12</div>
+              </div>
+              <div class="venn-overlap">2</div>
+              <div class="universal-items">1, 9</div>
+            </div>
+            <div class="venn-diagram hidden" id="diagram2">
+              <div class="circle circle-left">
+                <div class="circle-label">A</div>
+                <div class="circle-items">2, 4, 6, 8</div>
+              </div>
+              <div class="circle circle-right">
+                <div class="circle-label">B</div>
+                <div class="circle-items">10, 12</div>
+              </div>
+              <div class="venn-overlap">6, 8</div>
+              <div class="universal-items">14, 16, 18, 20, 22</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="quiz-panel" id="quizPanel">
+        <div class="question-index" id="questionIndex"></div>
+        <div class="question-text" id="questionText"></div>
+
+        <div class="game-area">
+          <canvas id="gameCanvas" aria-label="Quiz game canvas"></canvas>
+          <div class="game-instructions">Aim with the mouse. Click to shoot. Hit A, B, or C targets to answer.</div>
+          <div class="fade-overlay" id="fadeOverlay"></div>
+        </div>
+
+        <div class="feedback" id="feedback"></div>
+      </section>
+
+      <section class="result-panel hidden" id="resultPanel">
+        <h2>Quiz Finished!</h2>
+        <p id="resultScore"></p>
+        <p id="resultAverage"></p>
+        <button id="retryButton">Try Again</button>
+      </section>
+    </main>
+  </div>
+
+  <script src="Disrete Math Project Set Theory-web.js"></script>
+</body>
+</html>
